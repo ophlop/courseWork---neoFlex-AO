@@ -383,7 +383,7 @@ body {
 .plus-list > li {
   color: #4f5665;
   padding-left: 40px;
-  background-image: url(Vector.png);
+  background-image: url(src_files/Vector.png);
   background-repeat: no-repeat;
   background-position: left center;
 }
