@@ -5,27 +5,20 @@
   color: #1c1c1e;
 }
 
-html,
-body {
-  background-color: #f5f4ff;
-  height: fit-content;
+.container {
+  width: 1300px;
   position: relative;
-  min-height: 100%;
-  display: block;
-  padding: 0;
+  left: calc(50% - 1300px / 2);
 }
 
 /* HEADER STYLES */
-#header {
+header {
   display: flex;
   position: relative;
   top: 0;
-  left: calc(50% - 1300px / 2);
-  width: 1300px;
   height: 64px;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   padding: 16px 0px;
   gap: 40px;
 }
@@ -34,9 +27,7 @@ body {
   display: none;
 }
 
-.average-title,
-.average-title > a {
-  font-family: "Ubuntu";
+header > .title > a {
   font-weight: 700;
   font-size: 24px;
   line-height: 112%;
@@ -57,7 +48,6 @@ body {
 }
 
 .url-style {
-  font-family: "Ubuntu";
   font-weight: 700;
   font-size: 16px;
   line-height: 112%;
@@ -99,159 +89,69 @@ body {
   margin-right: 7px;
 }
 
-.hamburger-menu {
-  display: none;
-}
-
-#menu_toggle {
-  opacity: 0;
-}
-
-.menu_btn {
-  display: flex;
-  align-items: center;
-  position: fixed;
-  top: 42px;
-  right: 2.5%;
-  width: 26px;
-  height: 26px;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.menu_btn > span,
-.menu_btn > span::before,
-.menu_btn > span::after {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: #000;
-  transition-duration: 0.25s;
-  z-index: 10;
-}
-
-.menu_btn > span::before {
-  content: "";
-  top: -8px;
-}
-
-.menu_btn > span::after {
-  content: "";
-  top: 8px;
-}
-
-.menu_box {
-  display: block;
-  position: fixed;
-  visibility: hidden;
-  top: 0;
-  right: -100%;
-  width: 240px;
-  height: 100%;
-  margin: 0;
-  padding: 80px 0;
-  list-style: none;
-  text-align: left;
-  background-color: #bccde4;
-  transition-duration: 0.25s;
-}
-
-.menu_item {
-  display: block;
-  padding: 12px 24px;
-  color: black;
-  font-family: "Ubuntu";
-  font-size: 20px;
-  font-weight: 600;
-  text-decoration: none;
-  transition-duration: 0.25s;
-}
-
-.menu_item:hover {
-  color: #fff;
-}
-
-#menu_toggle:checked ~ .menu_btn > span {
-  transform: rotate(45deg);
-  background-color: #000;
-}
-#menu_toggle:checked ~ .menu_btn > span::before {
-  top: 0;
-  transform: rotate(0);
-  background-color: #000;
-}
-#menu_toggle:checked ~ .menu_btn > span::after {
-  top: 0;
-  transform: rotate(90deg);
-  background-color: #000;
-}
-#menu_toggle:checked ~ .menu_box {
-  visibility: visible;
-  right: 0%;
-  z-index: 8;
-}
-@media (max-width: 500px) {
-  #header {
-    width: calc(100vw - 20vw);
-    left: 2.5%;
+@media (max-width: 900px) {
+  .container {
+    width: 550px;
+    left: calc(50% - 550px / 2);
+    vertical-align: baseline;
   }
 
-  #header > .btn-main {
-    position: absolute;
-    right: 0;
+  .btn-main {
+    margin-top: 14px;
   }
 
   .nav-menu {
     display: none;
   }
-
-  .hamburger-menu {
-    display: contents;
-  }
 }
 
-@media (min-width: 500px) and (max-width: 950px) {
-  #header {
-    width: 86%;
-    left: 2.5%;
+@media (max-width: 550px) {
+  .container {
+    width: 350px;
+    left: calc(50% - 350px / 2);
+    vertical-align: baseline;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .btn-main {
+    margin-left: 40px;
+  }
+
+  .btn-main > .url-style {
+    margin-top: 10px;
+    width: 90px;
+    font-size: 14px;
   }
 
   .nav-menu {
     display: none;
-  }
-
-  .hamburger-menu {
-    display: contents;
-  }
-
-  #header > .btn-main {
-    position: absolute;
-    right: 0;
   }
 }
 /* HEADER STYLES */
 
-/* SECTIONS 1 */
-
-.section {
+.welcome-section,
+.our-plus-section {
   position: relative;
   display: flex;
   justify-content: space-between;
-  width: 1300px;
   height: fit-content;
-  left: calc(50% - 1300px / 2);
+}
+
+.container > section {
   margin-top: 132px;
   margin-bottom: 112px;
 }
 
-.title-phrase {
+.left-side > .title {
   width: 622px;
-  font-family: "Ubuntu";
   font-weight: 700;
   font-size: 48px;
   line-height: 50px;
-  color: #1c1c1e;
 }
 
 .credit-card-collage {
@@ -269,110 +169,83 @@ body {
   height: 150px;
 }
 
+.card-mobile {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .container > .welcome-section {
+    display: block;
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
+
+  .left-side {
+    width: 80%;
+    margin-bottom: 40px;
+  }
+
+  .left-side > .title {
+    width: 60vw;
+  }
+  .credit-card-collage {
+    grid-template-columns: 252px 252px;
+    grid-template-rows: auto auto;
+    grid-column-gap: 46px;
+    grid-row-gap: 46px;
+  }
+
+  .card {
+    width: 252px;
+    min-width: 200px;
+    height: auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .card-mobile {
+    display: contents;
+  }
+
+  .card-mobile > .card {
+    width: 350px;
+  }
+
+  .credit-card-collage {
+    display: none;
+  }
+
+  .left-side > .title {
+    width: 350px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .left-side > .btn-main {
+    margin: 0;
+  }
+
+  .left-side > .btn-main > a {
+    align-items: left;
+    width: 310px;
+  }
+}
+/* SECTIONS 1 */
+
+/* SECTION 2 */
 .our-plus-block {
   float: left;
   text-align: left;
 }
 
-.light-title {
+.our-plus-block > .title {
   font-weight: 500;
   font-size: 35px;
-  font-family: "Ubuntu";
   line-height: 50px;
-  color: #0b132a;
   margin-bottom: 20px;
 }
 
-.card-mobile {
-  display: none;
-}
-
-@media (max-width: 500px) {
-  .credit-card-collage {
-    display: none;
-  }
-
-  .card-mobile {
-    display: contents;
-    width: 500px;
-    height: 150px;
-    margin-top: 20px;
-    margin-bottom: 0px;
-  }
-
-  .card {
-    width: 80vw;
-    height: auto;
-  }
-
-  .left-side {
-    margin-bottom: 20px;
-  }
-
-  .section {
-    left: 2.5%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 370px;
-    display: block;
-  }
-
-  .title-phrase {
-    width: 90vw;
-    font-weight: 600;
-    line-height: 60px;
-  }
-}
-
-@media (min-width: 500px) and (max-width: 950px) {
-  .section {
-    left: 2.5%;
-    margin-top: 20px;
-    margin-bottom: 80px;
-    width: 90vw;
-    display: block;
-  }
-
-  .left-side {
-    margin-bottom: 40px;
-  }
-
-  .title-phrase {
-    width: 100%;
-    font-weight: 600;
-    line-height: 60px;
-  }
-
-  .credit-card-collage {
-    width: 100%;
-    height: fit-content;
-    display: inline-flex;
-    flex-wrap: wrap;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-  }
-
-  .card {
-    width: 32vw;
-    min-width: 220px;
-    height: auto;
-  }
-}
-/* SECTIONS 1 */
-
-/* SECTIONS 2 */
-.light-text {
-  font-family: "Ubuntu";
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 30px;
-  color: #4f5665;
-}
-
 .plus-list {
-  font-family: "Ubuntu";
   font-weight: 400;
   font-size: 14px;
   line-height: 30px;
@@ -383,51 +256,35 @@ body {
 .plus-list > li {
   color: #4f5665;
   padding-left: 40px;
-  background-image: url(src_files/Vector.png);
+  background-image: url(../img/Vector.png);
   background-repeat: no-repeat;
   background-position: left center;
 }
 
-@media (max-width: 500px) {
-  .section > img {
-    width: 90vw;
-    height: auto;
-    margin-top: 0;
+@media (max-width: 900px) {
+  .container > .our-plus-section {
+    display: block;
+    margin-top: 50px;
+    height: fit-content;
   }
 
-  .light-text {
-    font-size: 16px;
-    line-height: 0;
-  }
-}
-
-@media (min-width: 500px) and (max-width: 950px) {
-  .section > img {
+  .our-plus-section > img {
+    height: 40vw;
+    margin: 0;
+    position: relative;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
-    width: 30%;
-    min-width: 400px;
-    height: auto;
-    margin-top: 0;
-    display: flex;
-  }
-
-  .light-text {
-    font-size: 16px;
-    line-height: 0;
   }
 }
-/* SECTIONS 2 */
+/* SECTION 2 */
 
-/* SECTIONS 3 */
-.section-course {
+/* SECTION 3 */
+.container > .section-course {
   position: relative;
   display: flex;
   justify-content: space-between;
-  width: 1300px;
-  left: calc(50% - 1300px / 2);
   margin-top: 132px;
-  /* margin-bottom: 112px; */
 }
 
 .course-currencies {
@@ -451,25 +308,27 @@ body {
   background-color: transparent;
 }
 
-.left-info-block > .light-title {
-  font-family: "Ubuntu";
+.left-info-block > .title {
   font-size: 30px;
-  color: #1c1c1e;
   text-align: left;
   margin: 0;
 }
 
 .left-info-block > h6 {
-  font-family: "Ubuntu";
   font-weight: 500;
   font-size: 20px;
   line-height: 50px;
   margin-top: 24px;
 }
 
-.left-info-block > h6:last-child {
+.left-info-block > h6:last-child > .url-style {
   color: #fff;
   margin-bottom: 32px;
+}
+
+.left-info-block > h6:last-child > .url-style:hover {
+  color: #b2a35f;
+  cursor: pointer;
 }
 
 .right-info-block {
@@ -489,7 +348,6 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 50px;
-  font-family: "Ubuntu";
 }
 
 .course-info {
@@ -511,7 +369,7 @@ body {
 
 .course-card > .currencies {
   display: flex;
-  font-family: "Ubuntu";
+
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -522,7 +380,7 @@ body {
 
 .course-card > .price-course {
   display: flex;
-  font-family: "Ubuntu";
+
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -531,18 +389,15 @@ body {
   color: #000000;
   margin-left: 20px;
 }
-@media (min-width: 950px) {
-  .section-course {
-    margin-bottom: 112px;
-  }
-}
+
 @media (max-width: 950px) {
-  .section-course {
-    left: 2.5%;
-    width: 88vw;
+  .container > .section-course {
+    width: 60vw;
+    min-width: 350px;
     max-height: fit-content;
     padding-top: 40px;
     padding-bottom: 40px;
+    margin-bottom: 60px;
   }
 
   .course-currencies {
@@ -552,13 +407,13 @@ body {
     margin-bottom: 40px;
     position: relative;
   }
+
   .left-info-block {
     width: 100%;
     margin-bottom: 0px;
   }
 
   .left-info-block > h6 {
-    font-family: "Ubuntu";
     font-weight: 500;
     font-size: 16px;
     line-height: 0px;
@@ -597,15 +452,18 @@ body {
     padding-top: 0px;
   }
 }
-/* SECTIONS 3 */
+/* SECTION 3 */
 
-/* SECTIONS 4 */
-.title-block {
+/* SECTION 4 */
+.map-section > .title-block > .title {
   text-align: center;
-  width: 1300px;
-  left: calc(50% - 1300px / 2);
+  font-size: 30px;
   position: relative;
   margin-top: -68px;
+}
+
+.map-section > .title-block > .light-text {
+  text-align: center;
 }
 
 .map {
@@ -618,50 +476,51 @@ body {
   margin-right: auto;
 }
 
-@media (max-width: 950px) {
-  .title-block {
-    width: calc(100vw - 10vw);
-    left: 2.5%;
-    margin-top: -68px;
+@media (max-width: 900px) {
+  .container > .map-section {
+    margin-top: 0;
+    margin-bottom: 50px;
   }
+
   .map {
-    width: calc(100vw - 10vw);
+    width: 100%;
+    min-width: 350px;
     height: auto;
+    margin-top: 50px;
   }
 }
-/* SECTIONS 4 */
+/* SECTION 4 */
 
-/* SECTIONS 5 */
+/* SECTION 5 */
 .section-form {
   position: relative;
   align-items: center;
-  width: 1300px;
-  left: calc(50% - 1300px / 2);
   margin-top: 132px;
   margin-bottom: 112px;
   text-align: center;
 }
 
-.text-block-contacts > .average-title {
+.text-block-contacts > .title {
   line-height: 147.4%;
+  font-size: 24px;
   color: #eb801d;
   margin-bottom: 30px;
 }
 
-.text-block-contacts > .average-title {
+.text-block-contacts > .title:nth-child(2) {
   font-weight: 700;
+  color: #1c1c1e;
+  font-size: 30px;
   line-height: 147.4%;
   margin-bottom: 30px;
 }
 
-.bank-news-title {
-  font-family: "Ubuntu";
+.section-form > .form-box > .title {
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
-  line-height: 147.4%;
-  text-align: center;
-  letter-spacing: 0.02em;
+  line-height: 167%;
+  margin-bottom: 20px;
 }
 
 .form-subscribe-block {
@@ -669,8 +528,11 @@ body {
   height: 70px;
   background-color: #fff;
   border-radius: 20px;
-  padding-top: 22px;
-  display: inline-flex;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: baseline;
+  padding-top: 30px;
 }
 
 .form-subscribe-block > img {
@@ -718,7 +580,7 @@ body {
 
 .subscribe-btn > p {
   width: 96px;
-  font-family: "Ubuntu";
+
   font-weight: 700;
   font-size: 16px;
   color: #ffffff;
@@ -729,59 +591,45 @@ body {
   margin-right: 12px;
 }
 
-@media (max-width: 500px) {
-  .section-form {
-    margin-top: 40px;
+@media (max-width: 550px) {
+  .container > .section-form {
+    margin-top: 20px;
     margin-bottom: 50px;
   }
 
   .form-subscribe-block {
-    width: calc(100vw - 10vw);
-    height: 60px;
-    left: 2.5%;
-    padding-top: 16px;
-  }
-
-  .form-subscribe-block > input {
-    width: 176px;
-    height: 28px;
-    margin-top: 8px;
-  }
-
-  .form-subscribe-block > img {
-    margin-top: 4px;
-  }
-}
-
-@media (min-width: 500px) and (max-width: 950px) {
-  .section-form {
-    margin-top: 40px;
-    margin-bottom: 50px;
-  }
-
-  .form-subscribe-block {
-    max-width: 524px;
+    min-width: 350px;
     width: 90vw;
     height: 60px;
-    left: 2.5%;
-    padding-top: 16px;
+    padding-top: 14px;
+    margin-top: 10px;
   }
 
   .form-subscribe-block > input {
-    width: 50%;
-    min-width: 176px;
-    height: 28px;
-    margin-top: 8px;
+    width: 150px;
   }
 
   .form-subscribe-block > img {
-    margin-top: 4px;
+    margin-left: 12px;
+  }
+
+  .form-subscribe-block > .subscribe-btn {
+    margin-right: 12px;
+  }
+
+  .form-subscribe-block > .subscribe-btn > img {
+    display: none;
+  }
+
+  .form-subscribe-block > .subscribe-btn > p {
+    margin-left: 17px;
+    box-sizing: border-box;
   }
 }
-/* SECTIONS 5 */
+/* SECTION 5 */
 
-/* Footer */
-#footer {
+/* FOOTER */
+footer {
   position: relative;
   width: 100%;
   height: fit-content;
@@ -798,9 +646,7 @@ body {
   padding-bottom: 92px;
 }
 
-.contacts {
-  width: 1300px;
-  left: calc(50% - 1300px / 2);
+.container > .contacts {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -827,36 +673,31 @@ hr {
   transform: rotate(179.82deg);
 }
 
-.nav-footer {
+.footer-link-menu > .nav-menu {
   position: relative;
-  width: 1300px;
-  left: calc(50% - 1300px / 2);
-  display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   column-gap: 32px;
   row-gap: 8px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 147.4%;
   letter-spacing: 0.02em;
-  list-style: none;
   padding-left: 0;
+  width: 100%;
 }
 
-.nav-footer > li {
+.footer-link-menu > .nav-menu > li,
+.footer-link-menu > .nav-menu > .url-style {
   float: left;
   margin-right: 40px;
+  font-size: 16px;
   flex: none;
   order: 1;
   flex-grow: 0;
+  line-height: 147.4%;
+  font-weight: 500;
 }
 
 .text {
-  width: 1300px;
   position: relative;
   display: flex;
-  left: calc(50% - 1300px / 2);
   font-weight: 500;
   font-size: 16px;
   line-height: 147.4%;
@@ -865,10 +706,7 @@ hr {
 }
 
 @media (max-width: 500px) {
-  #footer {
-    width: 100vw;
-    left: 0;
-    bottom: 0;
+  footer {
     padding-top: 36px;
     padding-bottom: 22px;
     margin-top: 20px;
@@ -877,13 +715,11 @@ hr {
   .logo {
     width: 100px;
     height: 30px;
-    left: 2.5;
   }
 
   .contacts {
     width: calc(100vw - 10vw);
     height: fit-content;
-    left: 2.5%;
   }
 
   .contacts > a,
@@ -894,12 +730,10 @@ hr {
 
   hr {
     width: 90vw;
-    margin-left: 2.5%;
   }
 
-  .nav-footer {
-    width: calc(100vw - 10vw);
-    left: 2.5%;
+  .footer-link-menu > .nav-menu {
+    display: contents;
     font-size: 12px;
     column-gap: 10px;
     row-gap: 10px;
@@ -907,57 +741,53 @@ hr {
 
   .text {
     font-size: 12px;
-    width: calc(100vw - 10vw);
-    left: 2.5%;
   }
 }
 
 @media (min-width: 500px) and (max-width: 950px) {
-  #footer {
+  footer {
     width: 100vw;
-    left: 0;
-    bottom: 0;
     padding-top: 36px;
     padding-bottom: 22px;
     margin-top: 20px;
   }
 
+  footer > .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .logo {
     width: 100px;
     height: 30px;
-    left: 2.5;
   }
 
-  .contacts {
-    width: 92vw;
+  .container > .contacts {
+    width: 90%;
+    min-width: 350px;
     height: fit-content;
-    left: 2.5%;
   }
 
-  .contacts > a,
+  .container > .contacts > a,
   h3 {
     margin-top: 4px;
     margin-bottom: 10px;
   }
 
-  hr {
-    width: 92vw;
-    margin-left: 2.5%
+  .container > hr {
+    width: 98%;
   }
 
-  .nav-footer {
-    width: 92vw;
-    left: 2.5%;
+  .container > .footer-link-menu > .nav-menu {
+    display: contents;
+    width: 92%;
     font-size: 12px;
     column-gap: 10px;
     row-gap: 10px;
   }
 
-  .text {
+  .container > .text {
     font-size: 12px;
-    width: 92vw;
-    left: 2.5%;
   }
 }
-
-/* Footer */
+/* FOOTER */
