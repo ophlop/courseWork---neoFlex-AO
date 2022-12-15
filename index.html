@@ -4,18 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src_files/styles/reset.css">
     <link rel="stylesheet" href="./src_files/styles/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link href="./src_files/styles/menu-burger.css" rel="stylesheet" />
-    <title>NeoBank</title>
+    <link rel="stylesheet" href="./src_files/styles/menu-burger.css"  />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap"/>
     <link
       href="https://neostudy.neoflex.ru/pluginfile.php/1/theme_photon/favicon/1670746156/favicon_alpha.ico"
       rel="shortcut icon"
       type="image/x-icon"
     />
+    <title>NeoBank</title>
   </head>
   <body style="background-color: #f5f4ff">
     <div class="container">
@@ -47,6 +45,7 @@
         <!-- hamburge menu for mobile version -->
       </header>
     </div>
+    
     <main>
       <div class="container">
         <section class="welcome-section">
@@ -178,19 +177,21 @@
           <div class="form-box">
             <h3 class="title">Bank News</h3>
             <form action="#" class="form-subscribe-block">
+              <label for="email-news">
               <img
                 src="./src_files/img/email 1.png"
                 alt="email-icon"
-                style="background-color: transparent"
+                style="background-color: transparent; margin-left: 32px;"
               />
-              <input type="email" placeholder="Your email" required />
+              <input type="email" placeholder="Your email" id="email-news" required />
+            </label>
               <button type="submit" class="subscribe-btn">
                 <img
                   src="./src_files/img/plane.png"
                   alt="plane-icon"
-                  style="background-color: transparent; margin-right: 10px"
+                  style="background-color: transparent;"
                 />
-                <p>Subscribe</p>
+                <p>Subscribe</p>  
               </button>
             </form>
           </div>

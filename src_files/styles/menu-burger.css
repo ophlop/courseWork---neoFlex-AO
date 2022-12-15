@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  top: 28px;
+  top: 0px;
   right: 2.5%;
   width: 26px;
   height: 26px;
@@ -94,5 +94,11 @@
 @media (max-width: 900px) {
   .hamburger-menu {
     display: contents;
+  }
+}
+
+@media (max-width: 550px) {
+  .menu_item {
+    font-size: 30px;
   }
 }
