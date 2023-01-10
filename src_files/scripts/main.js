@@ -6,17 +6,17 @@ let currencyPairsPrice = ["USD", "CNY", "CHF", "EUR", "JPY", "TRY"];
 function createCourses(currencyPairsPrice) {
   showLeftRowInfo = true;
   let loader = document.querySelector(".loader");
-  loader.classList.add("hide-loader");
+  loader.classList.add(".hide-loader");
   let list = document.querySelector(".left-row__course-info");
   for (let i = 0; i < currencyPairsPrice.length; i++) {
     list.insertAdjacentHTML(
       "beforeend",
       `
           <div class="left-row__course-card">
-            <span class="course-card__currencies">${currencyPairsPrice[i].from}:</span>
+            <span class="course-card__currencies">${currencyPairsPrice[i]}:</span>
             <span class="course-card__price-course">${currencyPairsPrice[i].course}</span>
           </div>
-        `
+      `
     );
   }
 }
@@ -45,18 +45,27 @@ function showActualCourses(currencyPairsPrice = [{ from: "USD", to: "RUB" }]) {
     )
       .then((response) => {
         if (!response.ok) {
+          console.log("response1", response);
           throw new Error("Fetch error");
         }
+        console.log("response2", response);
         return response.json();
       })
       .then((response) => {
         el.course = response.toFixed(2);
+        console.log("response3", response.json());
       })
   );
+  return requests;
   Promise.all(requests)
     .then(() => {
-      if (!showLeftRowInfo) createCourses(currencyPairsPrice);
-      else updateCourses(currencyPairsPrice);
+      if (!showLeftRowInfo) {
+        createCourses(currencyPairsPrice);
+        console.log("CC", createCourses(currencyPairsPrice));
+      } else {
+        updateCourses(currencyPairsPrice);
+        console.log("else CC", updateCourses(currencyPairsPrice));
+      }
     })
     .catch((err) => {
       console.log(`${err}`);
@@ -69,3 +78,7 @@ setInterval(() => {
 }, 900000);
 
 // Currency API script part end
+
+// News Block script part start
+
+// News Block script part end

@@ -320,6 +320,138 @@ header {
 }
 /* SECTION 4 */
 
+/* NEWS SECTION */
+
+.news-block {
+  position: relative;
+  align-items: center;
+  margin-top: 132px;
+  margin-bottom: 112px;
+  text-align: center;
+}
+
+.news-block__title {
+  text-align: center;
+  font-size: 30px;
+  position: relative;
+  margin-top: -68px;
+  font-weight: 500;
+  margin-bottom: 26px;
+}
+
+.news-block__slider {
+  max-width: 1300px;
+  text-align: center;
+  position: relative;
+  margin-top: 46px;
+  width: 100%;
+}
+
+.news-block__scroller {
+  overflow: hidden;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  justify-content: center;
+}
+
+.news-block__items {
+  display: flex;
+  justify-content: space-between;
+  height: 448px;
+}
+
+.news-object {
+  width: 320px;
+  height: 448px;
+  scroll-snap-align: start;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.08), 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 28px;
+  border: 2px solid #bbbbbb;
+  margin: 0 40px;
+  cursor: pointer;
+}
+
+.news-object:first-child {
+  margin-left: 21px;
+}
+
+.news-object__news-card {
+  width: 256px;
+  height: 384px;
+  margin-top: 32px;
+  font-weight: 500;
+  background-color: #fff;
+}
+
+.news-object__news-card > img {
+  width: 256px;
+  height: 120px;
+}
+
+.news-object__news-card > p {
+  margin-top: 32px;
+  font-weight: 500;
+  text-align: center;
+  overflow: hidden;
+}
+
+.news-object__news-card > p:nth-child(2) {
+  height: 104px;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.news-object__news-card > p:last-child {
+  height: 96px;
+  font-size: 16px;
+  line-height: 23px;
+  cursor: pointer;
+}
+
+.news-object__news-card > p:last-child:hover {
+  text-decoration: underline;
+}
+
+.group-btn {
+  display: flex;
+  justify-content: end;
+  margin-top: 48px;
+}
+
+.group-btn__left-btn,
+.group-btn__right-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50px;
+  border: none;
+  background: #ffffff;
+  border: 1px solid #003cff;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.group-btn__left-btn {
+  background-image: url(../img/arr-left-dis.svg);
+  margin-right: 10px;
+}
+
+.group-btn__right-btn {
+  background-image: url(../img/arr-right-dis.svg);
+}
+
+.group-btn__left-btn:active {
+  background-image: url(../img/arr-left-en.svg);
+  background-color: #003cff;
+}
+
+.group-btn__right-btn:active {
+  background-image: url(../img/arr-right-en.svg);
+  background-color: #003cff;
+}
+
+/* NEWS SECTION */
+
 /* SECTION 5 */
 .form-block {
   position: relative;
